@@ -22,8 +22,7 @@ const AppRouter = () => {
 };
 
 const style = {
-  color: "red",
-  margin: "10px",
+  marginTop: "20px",
 };
 
 export default AppRouter;

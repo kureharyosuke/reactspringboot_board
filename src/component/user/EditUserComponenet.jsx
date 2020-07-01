@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import ApiService from "../../ApiService";
 
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
+
 class EditUserComponent extends Component {
   constructor(props) {
     super(props);
@@ -69,65 +73,68 @@ class EditUserComponent extends Component {
   render() {
     return (
       <div>
-        <h2>Edit User</h2>
+        <Typography variant="h4" style={style}>
+          Edit User
+        </Typography>
         <form>
-          <div>
-            <label>User Name:</label>
-            <input
-              type="text"
-              name="userName"
-              readOnly="true"
-              defaultValue={this.state.userName}
-            />
-          </div>
+          <TextField
+            type="text"
+            placeholder="please input your username"
+            name="userName"
+            value={this.state.userName}
+            onChange={this.onChange}
+          />
 
-          <div>
-            <label>First Name:</label>
-            <input
-              placeholder="Edit your first name"
-              name="firstName"
-              value={this.state.firstName}
-              onChange={this.onChange}
-            />
-          </div>
+          <TextField
+            type="password"
+            placeholder="please input your password"
+            name="password"
+            value={this.state.password}
+            onChange={this.onChange}
+          />
 
-          <div>
-            <label>Last Name:</label>
-            <input
-              placeholder="Edit your last name"
-              name="lastName"
-              value={this.state.lastName}
-              onChange={this.onChange}
-            />
-          </div>
+          <TextField
+            placeholder="please input your first name"
+            name="firstName"
+            value={this.state.firstName}
+            onChange={this.onChange}
+          />
 
-          <div>
-            <label>Age:</label>
-            <input
-              type="number"
-              placeholder="Edit your age"
-              name="age"
-              value={this.state.age}
-              onChange={this.onChange}
-            />
-          </div>
+          <TextField
+            placeholder="please input your last name"
+            name="lastName"
+            value={this.state.lastName}
+            onChange={this.onChange}
+          />
 
-          <div>
-            <label>Salary:</label>
-            <input
-              type="number"
-              placeholder="Edit your salary"
-              name="salary"
-              value={this.state.salary}
-              onChange={this.onChange}
-            />
-          </div>
+          <TextField
+            type="number"
+            placeholder="please input yout age"
+            name="age"
+            value={this.state.age}
+            onChange={this.onChange}
+          />
 
-          <button onClick={this.saveUser}>SAVE</button>
+          <TextField
+            type="number"
+            placeholder="please input your salary"
+            name="salary"
+            value={this.state.salary}
+            onChange={this.onChange}
+          />
+
+          <Button variant="contained" color="primary" onClick={this.saveUser}>
+            SAVE
+          </Button>
         </form>
       </div>
     );
   }
 }
+
+const style = {
+  display: "flex",
+  justifyContent: "center",
+};
 
 export default EditUserComponent;
